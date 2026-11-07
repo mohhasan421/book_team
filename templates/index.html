@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>نظام حجز المواعيد</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>نظام حجز المواعيد</h1>
+
+        <form method="POST">
+
+            <label>تاريخ الموعد:</label>
+            <input
+                type="date"
+                name="booking_date"
+                required
+            >
+
+            <label>وقت الموعد:</label>
+            <input
+                type="time"
+                name="booking_time"
+                required
+            >
+
+            <button type="submit">
+                حجز الموعد
+            </button>
+
+        </form>
+
+        {% if message %}
+            <div class="message">
+                {{ message }}
+            </div>
+        {% endif %}
+
+    </div>
+
+</body>
+</html>
